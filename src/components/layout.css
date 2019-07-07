@@ -6,7 +6,7 @@
   --colorBlack: #222;
 }
 body{
-  background: var(--colorPrimary);
+  background: var(--colorGrey);
   color: var(--colorBlack);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -32,4 +32,15 @@ h1,h2,h3,h4,h5,h6{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.btn-yellow{
+  border: 1px solid black !important;
+  color: var(--colorYrllow);
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+}
+.btn-yellow:hover{
+  background: var(--colorYrllow);
+  color: var(--colorPrimary);
 }
