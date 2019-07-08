@@ -1,6 +1,6 @@
 :root{
-  --colorPrimary: #993300;
-  --colorYrllow: #CC9933;
+  --colorPrimary: rgb(153, 51, 0);
+  --colorYrllow: rgb(204, 153, 51);
   --colorGrey: #ece8dc;
   --colorWhite: #fff;
   --colorBlack: #222;
@@ -32,6 +32,16 @@ h1,h2,h3,h4,h5,h6{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.image-overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(rgba(153, 51, 0, 0.8), rgba(204, 153, 51, 0.7));
+  z-index: -1;
 }
 .btn-yellow{
   border: 1px solid black !important;

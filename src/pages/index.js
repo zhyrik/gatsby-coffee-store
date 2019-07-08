@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import BacgroundSection from '../components/layouts/BacgroundSection'
+import BacgroundSection from '../components/global/BacgroundSection'
 import Info from '../components/home/Info'
+import Menu from '../components/home/Menu'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => (
       title = "Best coffee!!!"
     />
     <Info />
+    <Menu items = { data.menu.edges } />
   </Layout>
 )
 
@@ -24,6 +26,28 @@ export const query = graphql`
     childImageSharp {
       fluid{
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  menu:allContentfulCoffeItem {
+    edges {
+      node {
+        description {
+          content {
+            content {
+              value
+            }
+          }
+        }
+        id
+        price
+        title
+        category
+        image {
+          fixed(width: 50, height: 50) {
+            ...GatsbyContentfulFixed_tracedSVG
+          }
+        }
       }
     }
   }

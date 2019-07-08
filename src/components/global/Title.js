@@ -1,6 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * Functional react component for titles <h2></h2>.
+ * @function
+ * @param {node} chidren - React props.
+ * @returns {JSX.Element} - Rendered component.
+ * @useIn - home/Info.js
+ * @useIn - home/Menu.js
+*/
 function Title({ children }) {
   return (
     <div className="row">
@@ -12,7 +20,7 @@ function Title({ children }) {
 }
 
 Title.propTypes = {
-  chidren: PropTypes.node.isRequired
+  chidren: PropTypes.node
 }
 
 export default Title
