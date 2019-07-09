@@ -6,7 +6,7 @@
   --colorBlack: #222;
 }
 body{
-  background: var(--colorGrey);
+  background: var(--colorWhite);
   color: var(--colorBlack);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -56,4 +56,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .footer{
   background: var(--colorBlack);
+}
+.menu{
+  background: var(--colorGrey);
 }

@@ -14,24 +14,68 @@ export default class Menu extends Component {
   static propTypes = {
     prop: PropTypes.array
   }
+
+  state = {
+    categoris: ['all', "dsfkjads"],
+    items: null
+  }
+  // create list of categorys
+  createCategory = (categorys) => {
+    let newCategorys = categorys.map(category => category.node.category)
+    let getCategorys = new Set(newCategorys)
+    let arrCategorys = Array.from(getCategorys)
+    arrCategorys.unshift('all')
+    this.setState({categoris: arrCategorys})
+  }
+  // filtering data button
+  handleCategorys = (items, category) => {
+    if (category === 'all') {
+      this.setState({items})
+    } else {
+      let newItems = items.filter(item => item.node.category === category)
+      this.setState({items: newItems})
+    }
+  }
+
+  componentDidMount () {
+    this.setState({items: this.props.items})
+    this.createCategory(this.props.items)
+  }
   render() {
-    const items = this.props.items
-    
+    const { categoris, items } = this.state
+
     if (items && items.length > 0) {
       return (
         <section className="menu pt-5">
           <div className="container">
             <Title>Best of our menu</Title>
+            <div className="row">
+              <div className="col-10 mx-auto text-center">
+                {categoris.map((category, index) => (
+                  <button key={index} className="btn btn-yellow mx-2"
+                    onClick={() => {this.handleCategorys(this.props.items, category)}}
+                  >{category}</button>
+                ))}
+              </div>
+            </div>
             <div className="row mb-5">
               {items.map(({ node }) => (
                 <div
                   key={node.id}
-                  className="col-11 cor-md-6 my-3 d-flex mx-auto"
+                  className="col-11 col-md-6 my-3 d-flex mx-auto"
                 >
                   <div>
                     <Img fixed={node.image.fixed} />
                   </div>
-                  
+                  <div className="flex-grow-1 px-3">
+                    <div className="d-flex justify-content-between">
+                      <h6 className="mb-0">{node.title}</h6>
+                      <h6 className="mb-0 text-yellow">${node.price}</h6>
+                    </div>
+                    <p className="text-muted">
+                      <small>{node.description.content[0].content[0].value}</small>
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
