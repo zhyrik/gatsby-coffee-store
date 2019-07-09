@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
  * @returns {JSX.Element} - Rendered component.
  * @useIn - home/Info.js
  * @useIn - home/Menu.js
+ * @useIN - home/Products.js
 */
 function Title({ children }) {
   return (

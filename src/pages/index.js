@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import BacgroundSection from '../components/global/BacgroundSection'
 import Info from '../components/home/Info'
 import Menu from '../components/home/Menu'
+import Products from '../components/home/Products'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -17,6 +18,7 @@ const IndexPage = ({ data }) => (
     />
     <Info />
     <Menu items = { data.menu.edges } />
+    <Products />
   </Layout>
 )
 

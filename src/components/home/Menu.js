@@ -41,6 +41,7 @@ export default class Menu extends Component {
     this.setState({items: this.props.items})
     this.createCategory(this.props.items)
   }
+  
   render() {
     const { categoris, items } = this.state
 
