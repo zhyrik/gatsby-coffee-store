@@ -62,7 +62,7 @@ https://www.iconfinder.com/webalys */}
               )
             })}
             <li className="nav-item ml-sm-2">
-              <FaShoppingCart className="cart-icon" />
+              <FaShoppingCart className="cart-icon snipcart-checkout" />
             </li>
           </ul>
         </div>

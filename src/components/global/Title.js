@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
  * @useIn - home/Info.js
  * @useIn - home/Menu.js
  * @useIN - home/Products.js
+ * @useIN - home/Contact.js
 */
 function Title({ children }) {
   return (

@@ -7,6 +7,7 @@ import BacgroundSection from '../components/global/BacgroundSection'
 import Info from '../components/home/Info'
 import Menu from '../components/home/Menu'
 import Products from '../components/home/Products'
+import Contact from '../components/home/Contact'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -19,6 +20,7 @@ const IndexPage = ({ data }) => (
     <Info />
     <Menu items = { data.menu.edges } />
     <Products />
+    <Contact />
   </Layout>
 )
 
@@ -47,6 +49,7 @@ export const query = graphql`
         category
         image {
           fixed(width: 50, height: 50) {
+            src
             ...GatsbyContentfulFixed_tracedSVG
           }
         }
